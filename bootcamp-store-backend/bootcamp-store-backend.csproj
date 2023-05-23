@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
     <None Remove="Infraestructure\" />
     <None Remove="Infraestructure\Rest\" />
     <None Remove="Domain\Entities\" />
+    <None Remove="Infraestructure\Persistence\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -24,5 +26,6 @@
     <Folder Include="Infraestructure\" />
     <Folder Include="Infraestructure\Rest\" />
     <Folder Include="Domain\Entities\" />
+    <Folder Include="Infraestructure\Persistence\" />
   </ItemGroup>
 </Project>
