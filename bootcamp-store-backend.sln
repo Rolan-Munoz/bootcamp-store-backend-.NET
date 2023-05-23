@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bootcamp-store-backend", "bootcamp-store-backend\bootcamp-store-backend.csproj", "{3C428364-0217-4F2E-9C84-81EFF9C77C3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C428364-0217-4F2E-9C84-81EFF9C77C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C428364-0217-4F2E-9C84-81EFF9C77C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C428364-0217-4F2E-9C84-81EFF9C77C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C428364-0217-4F2E-9C84-81EFF9C77C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CCED986-A292-4F60-B879-5F78B0E898F4}
+	EndGlobalSection
+EndGlobal
