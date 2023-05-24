@@ -10,6 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +21,10 @@
     <None Remove="Infraestructure\Rest\" />
     <None Remove="Domain\Entities\" />
     <None Remove="Infraestructure\Persistence\" />
+    <None Remove="Application\Dtos\" />
+    <None Remove="Application\Services\" />
+    <None Remove="Domain\Persistence\" />
+    <None Remove="Application\Mappings\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -27,5 +33,9 @@
     <Folder Include="Infraestructure\Rest\" />
     <Folder Include="Domain\Entities\" />
     <Folder Include="Infraestructure\Persistence\" />
+    <Folder Include="Application\Dtos\" />
+    <Folder Include="Application\Services\" />
+    <Folder Include="Domain\Persistence\" />
+    <Folder Include="Application\Mappings\" />
   </ItemGroup>
 </Project>

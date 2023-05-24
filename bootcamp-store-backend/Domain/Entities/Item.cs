@@ -6,6 +6,7 @@ namespace bootcamp_store_backend.Domain.Entities
 {
     public class Item
     {
+        [Key]
         public long Id { get; set; }
 
         [Column(TypeName = "varchar(100)")]

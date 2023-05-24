@@ -6,6 +6,7 @@ namespace bootcamp_store_backend.Domain.Entities
     [Table("category")]
     public class Category
     {
+        [Key]
         public long Id { get; set; }
 
         [Column(TypeName ="varchar(100)")]
