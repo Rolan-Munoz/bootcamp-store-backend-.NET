@@ -8,11 +8,11 @@ namespace bootcamp_store_backend.Application.Services
 {
 	public class CategoryService:GenericService<Category, CategoryDto>, ICategoryService
 	{
+        private ICategoryRepository _categoryRepository;
 
-       
         public CategoryService(ICategoryRepository categoryRepository, IMapper mapper):base(categoryRepository, mapper)
         {
-            
+            _categoryRepository = categoryRepository;
         }
 
     }

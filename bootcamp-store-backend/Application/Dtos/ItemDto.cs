@@ -27,7 +27,7 @@ namespace bootcamp_store_backend.Application.Dtos
         public long CategoryId { get; set; }
 
 
-        public long CategoryName { get; set; }
+        public string CategoryName { get; set; }
     }
 }
 

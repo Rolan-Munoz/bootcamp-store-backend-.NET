@@ -18,12 +18,12 @@ namespace bootcamp_store_backend.Infraestructure.Persistence
 
         
 
-        public List<T> GetAll()
+        public virtual List<T> GetAll()
         {
             return _dbSet.ToList<T>();
         }
 
-        public T GetById(long id)
+        public virtual T GetById(long id)
         {
             var entity = _dbSet.Find(id);
             if (entity == null)
@@ -34,21 +34,21 @@ namespace bootcamp_store_backend.Infraestructure.Persistence
             return entity;
         }
 
-        public T Insert(T entity)
+        public virtual T Insert(T entity)
         {
             _dbSet.Add(entity);
             _context.SaveChanges();
             return entity;
         }
 
-        public T Update(T entity)
+        public virtual T Update(T entity)
         {
             _dbSet.Update(entity);
             _context.SaveChanges();
             return entity;
         }
 
-        public void Delete(long id)
+        public virtual void Delete(long id)
         {
             var entity = _dbSet.Find(id);
 
