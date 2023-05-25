@@ -3,8 +3,9 @@ using bootcamp_store_backend.Application.Dtos;
 
 namespace bootcamp_store_backend.Application.Services
 {
-	public interface IItemService:IItemService<ItemDto>
-	{
-	}
+    public interface IItemService : IItemService<ItemDto>
+    {
+        List<ItemDto> GetAllByCategoryId(long categoryId);
+    }
 }
 

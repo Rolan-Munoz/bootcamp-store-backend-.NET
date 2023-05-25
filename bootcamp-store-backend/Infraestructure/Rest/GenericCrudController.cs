@@ -18,7 +18,7 @@ namespace bootcamp_store_backend.Infraestructure.Rest
 
         [HttpGet]
         [Produces("application/json")]
-        public ActionResult<IEnumerable<D>> Get()
+        public virtual ActionResult<IEnumerable<D>> Get()
         {
             var dto = _service.GetAll();
             return Ok(dto);
