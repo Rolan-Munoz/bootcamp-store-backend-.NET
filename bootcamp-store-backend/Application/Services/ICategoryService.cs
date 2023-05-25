@@ -2,7 +2,7 @@
 
 namespace bootcamp_store_backend.Application.Services
 {
-    public interface ICategoryService:IGenericService<CategoryDto>
+    public interface ICategoryService:IItemService<CategoryDto>
     {
        
     }

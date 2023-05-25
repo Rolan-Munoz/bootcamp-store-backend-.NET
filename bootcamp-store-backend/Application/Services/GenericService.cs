@@ -4,7 +4,7 @@ using bootcamp_store_backend.Domain.Persistence;
 
 namespace bootcamp_store_backend.Application.Services
 {
-	public class GenericService<E,D>:IGenericService<D>
+	public class GenericService<E,D>:IItemService<D>
         where E : class
         where D : class
 	{

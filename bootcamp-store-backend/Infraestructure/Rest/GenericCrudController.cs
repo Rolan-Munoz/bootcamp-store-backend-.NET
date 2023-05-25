@@ -9,9 +9,9 @@ namespace bootcamp_store_backend.Infraestructure.Rest
 	public class GenericCrudController<D>:ControllerBase
 		where D : class
 	{
-        protected readonly IGenericService<D> _service;
+        protected readonly IItemService<D> _service;
 
-        public GenericCrudController(IGenericService<D> service)
+        public GenericCrudController(IItemService<D> service)
 		{
 			_service = service;
         }

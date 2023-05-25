@@ -2,7 +2,7 @@
 
 namespace bootcamp_store_backend.Application.Services
 {
-	public interface IGenericService<D> where D : class
+	public interface IItemService<D> where D : class
 	{
         
 
