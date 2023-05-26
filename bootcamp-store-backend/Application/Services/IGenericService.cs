@@ -1,8 +1,9 @@
 ﻿using System;
+using bootcamp_store_backend.Application.Dtos;
 
 namespace bootcamp_store_backend.Application.Services
 {
-	public interface IItemService<D> where D : class
+	public interface IGenericService<D> where D : class
 	{
         
 
@@ -15,7 +16,7 @@ namespace bootcamp_store_backend.Application.Services
         D Insert(D dto);
 
         D Update(D dto);
-
+        
     }
 }
 

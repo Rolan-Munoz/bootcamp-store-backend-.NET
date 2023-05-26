@@ -1,7 +1,9 @@
 ﻿using System;
+using bootcamp_store_backend.Application;
 using bootcamp_store_backend.Application.Dtos;
 using bootcamp_store_backend.Domain.Entities;
 using bootcamp_store_backend.Domain.Persistence;
+using bootcamp_store_backend.Infraestructure.Specs;
 using Microsoft.EntityFrameworkCore;
 
 namespace bootcamp_store_backend.Infraestructure.Persistence
@@ -9,10 +11,12 @@ namespace bootcamp_store_backend.Infraestructure.Persistence
     public class ItemRepository : GenericRepository<Item>, IItemRepository
     {
         private StoreContext _storeContext;
+        private readonly ISpecificationParser<Item> _specificationParser;
 
-        public ItemRepository(StoreContext storeContext) : base(storeContext)
+        public ItemRepository(StoreContext storeContext, ISpecificationParser<Item> specificationParser) : base(storeContext)
         {
             _storeContext = storeContext;
+            _specificationParser = specificationParser;
         }
 
         public List<ItemDto> GetByCategoryId(long categoryId)
@@ -61,6 +65,26 @@ namespace bootcamp_store_backend.Infraestructure.Persistence
             _storeContext.Entry(item).Reference(i => i.Category).Load();
             return item;
         }
+
+        public PagedList<Item> GetItemsByCriteriaPaged(string? filter, PaginationParameters paginationParameters)
+        {
+            var items = _storeContext.Items.Include(i => i.Category).AsQueryable();
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                Specification<Item> specification = _specificationParser.ParseSpecification(filter);
+                items = specification.ApplySpecification(items);
+            }
+
+            if (!string.IsNullOrEmpty(paginationParameters.Sort))
+            {
+                items = ApplySortOrder(items, paginationParameters.Sort);
+            }
+
+            return PagedList<Item>.ToPagedList(items, paginationParameters.PageNumber, paginationParameters.PageSize);
+        }
+
+       
     }
 }
 

@@ -1,10 +1,11 @@
 ﻿using System;
 using AutoMapper;
+using bootcamp_store_backend.Application.Dtos;
 using bootcamp_store_backend.Domain.Persistence;
 
 namespace bootcamp_store_backend.Application.Services
 {
-	public class GenericService<E,D>:IItemService<D>
+	public class GenericService<E,D>:IGenericService<D>
         where E : class
         where D : class
 	{
@@ -51,6 +52,8 @@ namespace bootcamp_store_backend.Application.Services
         {
             _repository.Delete(id);
         }
+
+       
     }
 	}
 

@@ -25,6 +25,7 @@
     <None Remove="Application\Services\" />
     <None Remove="Domain\Persistence\" />
     <None Remove="Application\Mappings\" />
+    <None Remove="Infraestructure\Specs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -37,5 +38,6 @@
     <Folder Include="Application\Services\" />
     <Folder Include="Domain\Persistence\" />
     <Folder Include="Application\Mappings\" />
+    <Folder Include="Infraestructure\Specs\" />
   </ItemGroup>
 </Project>
