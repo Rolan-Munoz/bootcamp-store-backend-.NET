@@ -2,7 +2,9 @@
 using bootcamp_store_backend.Application;
 using bootcamp_store_backend.Application.Dtos;
 using bootcamp_store_backend.Application.Services;
+using bootcamp_store_backend.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace bootcamp_store_backend.Infraestructure.Rest
 {
@@ -13,10 +15,12 @@ namespace bootcamp_store_backend.Infraestructure.Rest
     {
 
         private IItemService _itemService;
+        private readonly ILogger<CategoriesController> _logger;
 
-        public ItemsController(IItemService service) : base(service)
+        public ItemsController(IItemService service, ILogger<CategoriesController> logger) : base(service)
         {
             _itemService = service;
+            _logger = logger;
         }
 
         [NonAction]
@@ -57,6 +61,33 @@ namespace bootcamp_store_backend.Infraestructure.Rest
             return Ok(items);
 
         }
+
+        public override ActionResult<ItemDto> Insert(ItemDto dto)
+        {
+            try
+            {
+                return base.Insert(dto);
+            }
+            catch (InvalidImageException)
+            {
+                _logger.LogInformation("Invalid image inserting item with {dto.Name}", dto.Name);
+                return BadRequest();
+            }
+        }
+
+        public override ActionResult<ItemDto> Update(ItemDto dto)
+        {
+            try
+            {
+                return base.Insert(dto);
+            }
+            catch (InvalidImageException)
+            {
+                _logger.LogInformation("Invalid image inserting item with {dto.Name}", dto.Name);
+                return BadRequest();
+            }
+        }
+
     }
 }
 

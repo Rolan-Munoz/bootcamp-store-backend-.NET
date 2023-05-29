@@ -1,6 +1,7 @@
 ﻿using bootcamp_store_backend.Application.Mappings;
 using bootcamp_store_backend.Application.Services;
 using bootcamp_store_backend.Domain.Persistence;
+using bootcamp_store_backend.Domain.Services;
 using bootcamp_store_backend.Infraestructure.Persistence;
 using bootcamp_store_backend.Infraestructure.Specs;
 using Microsoft.AspNetCore.Diagnostics;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IImageVerifier, ImageVerifier>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -19,6 +21,7 @@ builder.Services.AddAutoMapper(typeof(ItemMapperProfile));
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddLogging();
 // urls en minusculas
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

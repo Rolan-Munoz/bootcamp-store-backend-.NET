@@ -26,7 +26,7 @@ namespace bootcamp_store_backend.Infraestructure.Rest
 
         [HttpGet("{id}")]
         [Produces("application/json")]
-        public ActionResult<D> Get(long id)
+        public virtual ActionResult<D> Get(long id)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace bootcamp_store_backend.Infraestructure.Rest
         [HttpPost]
         [Produces("application/json")]
         [Consumes("application/json")]
-        public ActionResult<D> Insert(D dto)
+        public virtual ActionResult<D> Insert(D dto)
         {
             if (dto == null)
             {
@@ -55,7 +55,7 @@ namespace bootcamp_store_backend.Infraestructure.Rest
         [HttpPut]
         [Produces("application/json")]
         [Consumes("application/json")]
-        public ActionResult<D> Update(D dto)
+        public virtual ActionResult<D> Update(D dto)
         {
             if (dto == null)
             {
@@ -66,7 +66,7 @@ namespace bootcamp_store_backend.Infraestructure.Rest
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(long id)
+        public virtual ActionResult Delete(long id)
         {
             try
             {
