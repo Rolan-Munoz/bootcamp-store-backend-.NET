@@ -10,7 +10,7 @@ namespace bootcamp_store_backend.Domain.Persistence
         List<ItemDto> GetByCategoryId(long categoryId);
 
 
-        PagedList<Item> GetItemsByCriteriaPaged(string? filter, PaginationParameters paginationParameters);
+        PagedList<ItemDto> GetItemsByCriteriaPaged(string? filter, PaginationParameters paginationParameters);
         
     }
 }
