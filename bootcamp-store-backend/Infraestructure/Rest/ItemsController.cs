@@ -30,6 +30,24 @@ namespace bootcamp_store_backend.Infraestructure.Rest
             throw new NotImplementedException();
         }
 
+        [HttpPost("/store/categories/{categoryId}/items/import")]
+        [Produces("application/json")]
+        [Consumes("application/json")]
+        public ActionResult<IEnumerable<ItemDto>> PostNewItems(long categoryId, List<ItemDto> items)
+        {
+            try
+            {
+                List<ItemDto> newItems = _itemService.PostNewItemsFromCategory(categoryId, items);
+                return Ok(newItems);
+            }
+            catch (InvalidImageException)
+            {
+                _logger.LogInformation("Invalid image importing items from a category {categoryId} name", categoryId);
+                return BadRequest();
+            }
+            
+        }
+
         [HttpGet]
         [Produces("application/json")]
         public ActionResult<PagedResponse<ItemDto>> Get([FromQuery] string? filter, [FromQuery] PaginationParameters paginationParameters)

@@ -21,6 +21,7 @@ namespace bootcamp_store_backend.Infraestructure.Persistence
 				LoadCategories();
 			}
 
+			storeContext.SaveChanges();
             if (!storeContext.Items.Any())
             {
                 LoadItems();
